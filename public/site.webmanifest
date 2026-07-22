@@ -1,0 +1,10 @@
+{
+  "name": "MAXAN Certificación",
+  "short_name": "MAXAN",
+  "description": "Certificación NMX-R-025-SCFI-2015 en Igualdad Laboral y No Discriminación",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#fbfcfa",
+  "theme_color": "#7a9c49",
+  "lang": "es-MX"
+}

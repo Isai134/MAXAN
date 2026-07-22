@@ -1,0 +1,86 @@
+export const trainingSchedule = [
+  [
+    '9 de febrero de 2026',
+    'Inducción a la Norma Mexicana NMX-R-025-SCFI-2015 en Igualdad Laboral y No Discriminación',
+    '3 horas',
+    '10:00 – 13:00 horas',
+  ],
+  [
+    'Del 11 al 13 de febrero de 2026',
+    'Interpretación de la Norma Mexicana NMX-R-025-SCFI-2015 en Igualdad Laboral y No Discriminación',
+    '9 horas',
+    '10:00 – 13:00 horas',
+  ],
+  [
+    'Del 10 al 12 de marzo de 2026',
+    'Formación del equipo auditor bajo la Norma Mexicana NMX-R-025-SCFI-2015 en Igualdad Laboral y No Discriminación',
+    '12 horas',
+    '10:00 – 14:00 horas',
+  ],
+  [
+    'Del 13 al 15 de abril de 2026',
+    'Herramientas para la Implantación de la Norma Mexicana NMX-R-025-SCFI-2015 en Igualdad Laboral y No Discriminación',
+    '12 horas',
+    '10:00 – 14:00 horas',
+  ],
+  [
+    '14, 21 y 28 de mayo, y 04 de junio de 2026',
+    'Formación del equipo auditor bajo la Norma Mexicana NMX-R-025-SCFI-2015 en Igualdad Laboral y No Discriminación',
+    '12 horas',
+    '10:00 – 13:00 horas',
+  ],
+  [
+    '05 de junio de 2026',
+    'Interpretación y análisis de resultados del cuestionario de Clima Laboral y No Discriminación',
+    '4 horas',
+    '10:00 – 14:00 horas',
+  ],
+  [
+    '11, 18 y 25 de junio, y 02 de julio de 2026',
+    'Formación del equipo auditor bajo la Norma Mexicana NMX-R-025-SCFI-2015 en Igualdad Laboral y No Discriminación',
+    '12 horas',
+    '10:00 – 13:00 horas',
+  ],
+  [
+    '19 de agosto de 2026',
+    'Diagnóstico y Plan de Acción (inicial) para la Norma Mexicana NMX-R-025-SCFI-2015 en Igualdad Laboral y No Discriminación',
+    '4 horas',
+    '10:00 – 14:00 horas',
+  ],
+  [
+    '07 de septiembre de 2026',
+    'Programa de Mantenimiento de la Norma Mexicana NMX-R-025-SCFI-2015 en Igualdad Laboral y No Discriminación',
+    '4 horas',
+    '10:00 – 14:00 horas',
+  ],
+  [
+    'Del 09 al 11 de septiembre de 2026',
+    'Interpretación de la Norma Mexicana NMX-R-025-SCFI-2015 en Igualdad Laboral y No Discriminación',
+    '9 horas',
+    '10:00 – 13:00 horas',
+  ],
+  [
+    '02 de octubre de 2026',
+    'Diagnóstico y Plan de Acción (inicial) para la Norma Mexicana NMX-R-025-SCFI-2015 en Igualdad Laboral y No Discriminación',
+    '4 horas',
+    '10:00 – 14:00 horas',
+  ],
+  [
+    'Del 12 al 14 de octubre de 2026',
+    'Formación del equipo auditor bajo la Norma Mexicana NMX-R-025-SCFI-2015 en Igualdad Laboral y No Discriminación',
+    '12 horas',
+    '10:00 – 14:00 horas',
+  ],
+  [
+    '2 y 3 de noviembre de 2026',
+    'Herramientas para la implantación de la Norma Mexicana NMX-R-025-SCFI-2015 en Igualdad Laboral y No Discriminación',
+    '6 horas',
+    '10:00 – 13:00 horas',
+  ],
+  [
+    '01 de diciembre de 2026',
+    'Inducción a la Norma Mexicana NMX-R-025-SCFI-2015 en Igualdad Laboral y No Discriminación',
+    '3 horas',
+    '10:00 – 13:00 horas',
+  ],
+] as const;
