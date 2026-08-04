@@ -31,7 +31,7 @@ export default async function AuditorPage({ params }: { params: Promise<{ id: st
         ]}
       />
       <SectionWrapper className="max-w-3xl">
-        <div className="relative mx-auto aspect-[4/4.4] max-w-md overflow-hidden rounded-[2rem] bg-maxan-50 shadow-card">
+        <div className="relative mx-auto aspect-[4/4.4] max-w-md overflow-hidden bg-maxan-100">
           <Image
             src={auditor.image}
             alt={`Retrato de ${auditor.name}`}

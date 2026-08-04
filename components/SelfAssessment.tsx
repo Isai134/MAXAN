@@ -31,7 +31,7 @@ export function SelfAssessment() {
         {requirements.map((requirement, index) => (
           <label
             key={requirement}
-            className="flex cursor-pointer items-start gap-4 rounded-2xl border border-ink/10 bg-white p-5 transition hover:border-maxan-300"
+            className="flex cursor-pointer items-start gap-4 border-b border-ink/15 py-5 transition hover:border-maxan-400"
           >
             <input
               type="checkbox"
@@ -49,18 +49,15 @@ export function SelfAssessment() {
           </label>
         ))}
       </div>
-      <aside className="h-fit rounded-3xl bg-ink p-8 text-white lg:sticky lg:top-32">
+      <aside className="h-fit border-y border-ink bg-ink py-8 pl-6 pr-2 text-white lg:sticky lg:top-32">
         <CheckCircle2 className="h-9 w-9 text-maxan-300" />
         <p className="mt-8 text-6xl font-semibold tracking-tight">{percent}%</p>
         <p className="mt-3 leading-7 text-white/65">
           Avance orientativo con base en los temas principales. No sustituye la evaluación ni la
           auditoría formal.
         </p>
-        <div className="mt-8 h-2 overflow-hidden rounded-full bg-white/10">
-          <div
-            className="h-full rounded-full bg-maxan-400 transition-all"
-            style={{ width: `${percent}%` }}
-          />
+        <div className="mt-8 h-2 overflow-hidden bg-white/10">
+          <div className="h-full bg-maxan-400 transition-all" style={{ width: `${percent}%` }} />
         </div>
       </aside>
     </div>

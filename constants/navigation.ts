@@ -14,9 +14,12 @@ export const navigation: NavigationItem[] = [
   },
   {
     label: 'Servicios',
-    href: '/servicios/certificacion',
+    href: '/productos',
     children: [
-      { label: 'Certificación', href: '/servicios/certificacion' },
+      { label: 'Productos', href: '/productos' },
+      { label: 'Distintivo NMX-R-025', href: '/productos/distintivo-nmx-r-025' },
+      { label: 'Sistemas de gestión', href: '/sistemas-gestion' },
+      { label: 'Unidades de inspección', href: '/unidades-inspeccion' },
       { label: 'Capacitaciones', href: '/capacitaciones/calendario-capacitaciones' },
       { label: 'Cursos', href: '/servicios/cursos' },
       { label: 'Webinars', href: '/servicios/webinars' },

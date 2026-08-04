@@ -21,10 +21,10 @@ export default function AuditorsPage() {
         breadcrumbs={[{ label: 'Norma certificable' }, { label: 'Equipo auditor' }]}
       />
       <SectionWrapper>
-        <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+        <div className="grid gap-x-8 border-t border-ink/15 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
           {auditors.map((auditor, index) => (
             <MotionReveal key={auditor.name} delay={index * 0.04}>
-              <article className="group overflow-hidden rounded-3xl border border-ink/10 bg-white shadow-soft">
+              <article className="group border-b border-ink/15 py-6">
                 <div className="relative aspect-[4/4.4] bg-maxan-50">
                   <Image
                     src={auditor.image}
@@ -34,7 +34,7 @@ export default function AuditorsPage() {
                     className="object-cover object-top transition duration-500 group-hover:scale-[1.03]"
                   />
                 </div>
-                <div className="p-6">
+                <div className="pt-5">
                   <h2 className="text-xl font-semibold leading-7">{auditor.name}</h2>
                   <p className="mt-2 text-sm font-semibold text-maxan-700">{auditor.role}</p>
                 </div>

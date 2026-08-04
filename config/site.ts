@@ -2,7 +2,7 @@ export const siteConfig = {
   name: 'MAXAN Certificación',
   legalName: 'MAXAN Certificación S.A. de C.V.',
   description:
-    'Organismo de certificación acreditado para la Norma Mexicana NMX-R-025-SCFI-2015 en Igualdad Laboral y No Discriminación.',
+    'Organismo de certificación de sistemas de gestión, productos y servicios de inspección.',
   url: process.env.NEXT_PUBLIC_SITE_URL ?? 'https://www.maxan.com.mx',
   locale: 'es_MX',
   address: 'Ex Hacienda Barbabosa 100-A, Col. San Miguel Zinacantepec, C.P. 51357',

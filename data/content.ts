@@ -28,17 +28,17 @@ export const values = [
 
 export const aboutContent = {
   accreditation:
-    'Estamos acreditados ante la Entidad Mexicana de Acreditación (EMA), como un Organismo de Certificación avalado para certificar en la Norma Mexicana NMX-R-025-SCFI-2015 en Igualdad Laboral y No Discriminación, con el número 155/19.',
+    'MAXAN trabaja como Organismo de Certificación de Sistemas de Gestión, con una oferta que integra productos de certificación, sistemas de gestión y servicios de inspección. Consulta con nuestro equipo el alcance aplicable a tu organización.',
   strategicDirection:
-    'MAXAN Certificación nace con la firme convicción de impulsar y consolidar la verificación y certificación de productos, ya que al dar confianza a los clientes, usuarios directos, empresas, gobierno y demás partes interesadas, sobre la calidad, funcionalidad y cumplimiento de los requisitos inherentes a los productos, contribuimos al desarrollo y competitividad de México. Como parte de su estructura organizacional, MAXAN Certificación cuenta con una visión, misión y valores corporativos que rigen el funcionamiento interno de cada una y cada uno de sus miembros.',
+    'MAXAN Certificación impulsa la evaluación de la conformidad para dar confianza a clientes, organizaciones, gobierno y demás partes interesadas. A través de la certificación de productos, sistemas de gestión y los servicios de inspección, contribuimos al cumplimiento normativo, la mejora de los procesos y la competitividad de México.',
   mission:
-    'Somos un Organismo que ofrece servicios profesionales con personal altamente competente, que promueve entre nuestros clientes y partes interesadas un ambiente de confianza; con precios competitivos, equitativos y atractivos conforme a la dinámica del mercado, tenemos amplia capacidad para dar certidumbre en la ejecución de nuestras auditorías; entregamos oportunamente los certificados a los centros de trabajo que demuestran cumplimiento de requisitos normativos inherentes a los productos.',
+    'Somos un Organismo que ofrece servicios profesionales con personal competente y un enfoque imparcial. Generamos confianza en la certificación de sistemas de gestión, productos y servicios de inspección, con atención oportuna y soluciones acordes con las necesidades de cada organización.',
   vision:
-    'Ser en el mercado de la certificación un referente distintivo por nuestras capacidades innovadoras que nos definirá como una marca exitosa en la certificación de prácticas de igualdad laboral y no discriminación, tendremos la mejor oferta en cuanto a certificados de productos relacionados a normas mexicanas; seremos un equipo de especialistas con capacidad para trabajar con altos estándares de calidad, armonía, espíritu de compañerismo y trabajo en equipo, lo que nos convertirá en el organismo de certificación de mayor presencia nacional.',
+    'Ser un referente nacional en la certificación de sistemas de gestión, productos y servicios de inspección, reconocido por su rigor técnico, innovación, imparcialidad y cercanía con las organizaciones.',
   qualityPolicy:
-    'En Maxan Certificación, estamos comprometidos en trabajar de manera transparente, confiable, efectiva y confidencial en los procesos de certificación de sistemas de gestión, de competencias, de procesos y procedimientos, además en los procesos de verificación de cumplimiento de normas como una Unidad de verificación y durante la proporción de capacitación abierta, trabajamos de manera imparcial, previniendo cualquier conflicto de intereses, siendo objetivos al gestionar nuestros procesos y al proporcionar nuestros servicios, aplicando la mejora continua en el desempeño de nuestro trabajo.',
+    'En MAXAN Certificación trabajamos de manera transparente, confiable, efectiva y confidencial en los procesos de certificación de sistemas de gestión, productos y servicios de inspección. Actuamos con imparcialidad, prevenimos conflictos de interés, gestionamos nuestros procesos con objetividad y mejoramos continuamente nuestro desempeño.',
   equalPolicy:
-    'Las políticas y procedimientos bajo los cuales opera MAXAN CERTIFICACIÓN son de igualdad para todas las empresas u organismos que soliciten el servicio; los procedimientos utilizados son los que prescribe la NMX-EC-17065-IMNC-2012.',
+    'Las políticas y procedimientos bajo los cuales opera MAXAN CERTIFICACIÓN son de igualdad para todas las empresas u organismos que soliciten un servicio, conforme a los requisitos, disposiciones y alcances aplicables.',
 };
 
 export const normPractices = [

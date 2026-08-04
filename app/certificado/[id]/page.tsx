@@ -1,41 +1,90 @@
-import { BadgeCheck, Mail } from 'lucide-react';
+import { BadgeCheck, CalendarDays, CircleAlert, FileCheck2 } from 'lucide-react';
+import { notFound } from 'next/navigation';
 import { PageHeader } from '@/components/PageHeader';
 import { SectionWrapper } from '@/components/SectionWrapper';
+import { certificates, findCertificate } from '@/lib/certificates';
 import { pageMetadata } from '@/lib/seo';
+import { formatDate } from '@/utils/format';
+
+export function generateStaticParams() {
+  return certificates.map((certificate) => ({ id: certificate.certificateNumber }));
+}
 
 export async function generateMetadata({ params }: { params: Promise<{ id: string }> }) {
   const { id } = await params;
-  return pageMetadata(
-    `Certificado ${id}`,
-    `Consulta pública del certificado MAXAN ${id}.`,
-    `/certificado/${id}`,
-  );
+  const certificate = findCertificate(decodeURIComponent(id));
+  return certificate
+    ? pageMetadata(
+        `Certificado ${certificate.certificateNumber}`,
+        `Consulta pública del certificado de ${certificate.organization}.`,
+        `/certificado/${certificate.certificateNumber}`,
+      )
+    : {};
 }
+
 export default async function CertificatePage({ params }: { params: Promise<{ id: string }> }) {
   const { id } = await params;
+  const certificate = findCertificate(decodeURIComponent(id));
+  if (!certificate) notFound();
+
+  const isCurrent = certificate.status === 'vigente';
+  const statusLabel = isCurrent ? 'Certificado vigente' : 'Certificado vencido';
+
   return (
     <>
       <PageHeader
         eyebrow="Consulta pública"
-        title={`Certificado ${decodeURIComponent(id)}`}
-        description="La ruta de consulta conserva la compatibilidad con el sitio anterior y está preparada para conectarse a la base de certificados vigente."
-        breadcrumbs={[{ label: 'Certificado' }, { label: decodeURIComponent(id) }]}
+        title={certificate.certificateNumber}
+        description={`Registro emitido a nombre de ${certificate.organization}.`}
+        breadcrumbs={[
+          { label: 'Certificado', href: '/certificado' },
+          { label: certificate.certificateNumber },
+        ]}
       />
-      <SectionWrapper className="max-w-4xl">
-        <div className="rounded-[2rem] border border-maxan-200 bg-white p-8 text-center shadow-card sm:p-12">
-          <BadgeCheck className="mx-auto h-14 w-14 text-maxan-700" />
-          <h2 className="mt-7 text-3xl font-semibold">Verificación pendiente de conexión</h2>
-          <p className="mx-auto mt-4 max-w-2xl leading-8 text-slate-600">
-            Este proyecto no incluye credenciales ni acceso a la base privada de certificados. Para
-            confirmar vigencia, alcance y datos del centro de trabajo, contacta directamente a
-            MAXAN.
-          </p>
-          <a
-            href="mailto:informes@maxan.com.mx"
-            className="mt-8 inline-flex items-center gap-2 rounded-full bg-ink px-6 py-3.5 text-sm font-semibold text-white"
-          >
-            <Mail className="h-4 w-4" /> informes@maxan.com.mx
-          </a>
+      <SectionWrapper className="max-w-5xl">
+        <div className="grid gap-10 border-y border-ink/15 py-10 lg:grid-cols-[.7fr_1.3fr] lg:py-14">
+          <div className="border-l-2 border-maxan-500 pl-6">
+            {isCurrent ? (
+              <BadgeCheck className="h-10 w-10 text-maxan-700" aria-hidden="true" />
+            ) : (
+              <CircleAlert className="h-10 w-10 text-slate-500" aria-hidden="true" />
+            )}
+            <p
+              className={`mt-6 text-2xl font-semibold ${isCurrent ? 'text-maxan-800' : 'text-slate-600'}`}
+            >
+              {statusLabel}
+            </p>
+            <p className="mt-3 text-sm leading-6 text-slate-600">
+              Vigencia hasta el {formatDate(certificate.validUntil)}.
+            </p>
+          </div>
+          <div>
+            <p className="eyebrow">Datos del certificado</p>
+            <h2 className="text-3xl font-semibold tracking-tight">{certificate.organization}</h2>
+            <p className="mt-4 max-w-2xl leading-7 text-slate-600">{certificate.standard}</p>
+            <dl className="mt-8 border-t border-ink/15">
+              {[
+                ['Alcance', certificate.scope, FileCheck2],
+                ['Fecha de emisión', formatDate(certificate.issueDate), CalendarDays],
+                ['Inicio de vigencia', formatDate(certificate.validFrom), CalendarDays],
+                ['Última vigilancia', formatDate(certificate.lastReviewDate), CalendarDays],
+              ].map(([label, value, Icon]) => {
+                const DetailIcon = Icon as typeof CalendarDays;
+                return (
+                  <div
+                    key={label as string}
+                    className="grid gap-3 border-b border-ink/15 py-5 sm:grid-cols-[180px_1fr]"
+                  >
+                    <dt className="flex items-center gap-2 text-sm font-semibold text-ink">
+                      <DetailIcon className="h-4 w-4 text-maxan-700" aria-hidden="true" />
+                      {label as string}
+                    </dt>
+                    <dd className="leading-7 text-slate-600">{value as string}</dd>
+                  </div>
+                );
+              })}
+            </dl>
+          </div>
         </div>
       </SectionWrapper>
     </>

@@ -1,5 +1,6 @@
 import type { MetadataRoute } from 'next';
 import { siteConfig } from '@/config/site';
+import { certificates } from '@/lib/certificates';
 import { articles, trainings } from '@/lib/content';
 
 export default function sitemap(): MetadataRoute.Sitemap {
@@ -11,6 +12,10 @@ export default function sitemap(): MetadataRoute.Sitemap {
     '/norma-certificable/equipo-auditor',
     '/preguntas-frecuentes',
     '/servicios/certificacion',
+    '/productos',
+    '/productos/distintivo-nmx-r-025',
+    '/sistemas-gestion',
+    '/unidades-inspeccion',
     '/servicios/cursos',
     '/servicios/webinars',
     '/capacitaciones/calendario-capacitaciones',
@@ -37,6 +42,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
     ...articles.map((article) => ({
       url: `${siteConfig.url}/boletines/comunicados/${article.slug}`,
       lastModified: new Date(article.PublishDate),
+      changeFrequency: 'yearly' as const,
+      priority: 0.5,
+    })),
+    ...certificates.map((certificate) => ({
+      url: `${siteConfig.url}/certificado/${certificate.certificateNumber}`,
+      lastModified: new Date(certificate.lastReviewDate),
       changeFrequency: 'yearly' as const,
       priority: 0.5,
     })),

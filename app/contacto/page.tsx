@@ -48,7 +48,7 @@ function ContactCard({
   content: string;
 }) {
   return (
-    <div className="rounded-3xl border border-ink/10 bg-white p-6 shadow-soft">
+    <div className="border-t border-ink/15 pt-6">
       <Icon className="h-7 w-7 text-maxan-700" />
       <h2 className="mt-5 font-semibold">{title}</h2>
       <p className="mt-2 whitespace-pre-line text-sm leading-7 text-slate-600">{content}</p>

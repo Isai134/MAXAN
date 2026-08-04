@@ -22,10 +22,10 @@ export default function AboutPage() {
         description={aboutContent.accreditation}
         breadcrumbs={[{ label: 'Nosotros' }]}
         aside={
-          <div className="rounded-3xl border border-maxan-200 bg-white/80 p-6 shadow-soft">
-            <BadgeCheck className="h-8 w-8 text-maxan-700" />
-            <p className="mt-4 text-2xl font-semibold">Acreditación 155/19</p>
-            <p className="mt-2 text-sm leading-6 text-slate-600">
+          <div className="border-l-2 border-maxan-500 pl-5">
+            <BadgeCheck className="h-7 w-7 text-maxan-700" />
+            <p className="mt-3 text-xl font-semibold">Acreditación 155/19</p>
+            <p className="mt-1 text-sm leading-6 text-slate-600">
               Entidad Mexicana de Acreditación
             </p>
           </div>
@@ -39,7 +39,7 @@ export default function AboutPage() {
               width={1200}
               height={800}
               alt="Certificación MAXAN"
-              className="rounded-[2rem] shadow-card"
+              className="w-full"
             />
           </MotionReveal>
           <MotionReveal delay={0.1}>
@@ -53,22 +53,22 @@ export default function AboutPage() {
       </SectionWrapper>
       <div className="bg-mist">
         <SectionWrapper>
-          <div className="grid gap-6 lg:grid-cols-3">
+          <div className="grid gap-x-10 border-t border-ink/15 lg:grid-cols-3">
             {[
               ['Misión', aboutContent.mission, Target],
               ['Visión', aboutContent.vision, Eye],
               ['Política de calidad', aboutContent.qualityPolicy, Scale],
             ].map(([title, text, Icon]) => (
               <MotionReveal key={title as string} className="h-full">
-                <article className="h-full rounded-3xl border border-ink/10 bg-white p-7 shadow-soft">
+                <article className="h-full border-b border-ink/15 py-8">
                   <Icon className="h-8 w-8 text-maxan-700" />
-                  <h2 className="mt-7 text-2xl font-semibold">{title as string}</h2>
+                  <h2 className="mt-6 text-2xl font-semibold">{title as string}</h2>
                   <p className="mt-5 leading-7 text-slate-600">{text as string}</p>
                 </article>
               </MotionReveal>
             ))}
           </div>
-          <p className="mt-8 rounded-2xl border border-maxan-200 bg-maxan-50 p-6 leading-7 text-maxan-950">
+          <p className="mt-8 border-l-2 border-maxan-500 pl-6 leading-7 text-maxan-950">
             {aboutContent.equalPolicy}
           </p>
         </SectionWrapper>
@@ -78,10 +78,10 @@ export default function AboutPage() {
           <p className="eyebrow">Nuestros valores</p>
           <h2 className="section-title">La forma en que hacemos nuestro trabajo.</h2>
         </MotionReveal>
-        <div className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-5">
+        <div className="mt-12 grid gap-x-7 border-t border-ink/15 sm:grid-cols-2 lg:grid-cols-5">
           {values.map((value, index) => (
             <MotionReveal key={value.title} delay={index * 0.06}>
-              <article className="h-full rounded-3xl border border-ink/10 bg-white p-6 text-center shadow-soft">
+              <article className="h-full border-b border-ink/15 py-6 text-center">
                 <Image
                   src={value.image}
                   alt=""

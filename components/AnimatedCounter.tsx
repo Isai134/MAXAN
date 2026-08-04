@@ -24,7 +24,7 @@ export function AnimatedCounter({
     return () => controls.stop();
   }, [inView, value]);
   return (
-    <motion.div ref={ref} className="rounded-2xl border border-ink/10 bg-white p-6 shadow-soft">
+    <motion.div ref={ref} className="border-t border-ink/15 pt-5">
       <p className="text-4xl font-semibold tracking-tight text-maxan-700">
         {display}
         {suffix}

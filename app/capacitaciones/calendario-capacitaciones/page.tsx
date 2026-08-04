@@ -24,17 +24,18 @@ export default function CalendarPage() {
           <a
             href="/documents/archive/CURSOS_MAXAN_2026_2b1d3030e2.pdf"
             target="_blank"
-            className="inline-flex items-center gap-2 rounded-full bg-ink px-6 py-3.5 text-sm font-semibold text-white"
+            className="inline-flex items-center gap-2 border-b-2 border-maxan-600 pb-2 text-sm font-semibold text-maxan-800 transition hover:border-ink hover:text-ink"
           >
-            <Download className="h-4 w-4" /> Catálogo 2026
+            <Download className="h-4 w-4" /> Catálogo 2026 · PDF
           </a>
         }
       />
       <SectionWrapper>
-        <div className="grid gap-8 lg:grid-cols-[.35fr_1fr]">
-          <aside className="h-fit rounded-3xl border border-maxan-200 bg-maxan-50 p-7 lg:sticky lg:top-32">
-            <h2 className="text-xl font-semibold">Aspectos a considerar</h2>
-            <ul className="mt-5 space-y-4 text-sm leading-6 text-slate-600">
+        <div className="grid gap-12 lg:grid-cols-[.32fr_1fr]">
+          <aside className="h-fit border-l-2 border-maxan-500 pl-6 lg:sticky lg:top-32">
+            <p className="eyebrow">Antes de registrarte</p>
+            <h2 className="text-2xl font-semibold">Aspectos a considerar</h2>
+            <ul className="mt-6 space-y-4 text-sm leading-6 text-slate-600">
               <li>Formas de pago: transferencia o depósito en cuenta.</li>
               <li>Las fechas están sujetas a cambios.</li>
               <li>Las actividades se realizan con un mínimo de 10 personas inscritas.</li>
@@ -44,25 +45,30 @@ export default function CalendarPage() {
               </li>
             </ul>
           </aside>
-          <div className="space-y-5">
+          <div className="border-t border-ink/15">
             {trainingSchedule.map(([date, title, duration, time], index) => (
               <MotionReveal key={`${date}-${title}`} delay={index * 0.02}>
-                <article className="rounded-3xl border border-ink/10 bg-white p-6 shadow-soft sm:p-7">
-                  <div className="flex items-center gap-2 text-xs font-bold uppercase tracking-[.14em] text-maxan-700">
-                    <CalendarDays className="h-4 w-4" />
-                    {date}
+                <article className="grid gap-5 border-b border-ink/15 py-7 sm:grid-cols-[150px_1fr] sm:py-9">
+                  <div>
+                    <p className="font-serif text-4xl leading-none text-maxan-600">
+                      {String(index + 1).padStart(2, '0')}
+                    </p>
+                    <p className="mt-4 flex items-start gap-2 text-xs font-bold uppercase leading-5 tracking-[.14em] text-maxan-700">
+                      <CalendarDays className="mt-0.5 h-4 w-4 shrink-0" />
+                      {date}
+                    </p>
                   </div>
-                  <h2 className="mt-4 text-xl font-semibold leading-8">{title}</h2>
-                  <div className="mt-5 flex flex-wrap gap-3 text-sm text-slate-600">
-                    <span className="flex items-center gap-2 rounded-full bg-mist px-4 py-2">
-                      <Clock3 className="h-4 w-4" />
-                      {duration}
-                    </span>
-                    <span className="rounded-full bg-mist px-4 py-2">{time}</span>
-                    <span className="flex items-center gap-2 rounded-full bg-mist px-4 py-2">
-                      <Laptop className="h-4 w-4" />
-                      Remota
-                    </span>
+                  <div>
+                    <h2 className="text-xl font-semibold leading-8">{title}</h2>
+                    <div className="mt-5 flex flex-wrap gap-x-5 gap-y-3 border-t border-ink/10 pt-4 text-sm text-slate-600">
+                      <span className="flex items-center gap-2">
+                        <Clock3 className="h-4 w-4 text-maxan-700" /> {duration}
+                      </span>
+                      <span>{time}</span>
+                      <span className="flex items-center gap-2">
+                        <Laptop className="h-4 w-4 text-maxan-700" /> Remota
+                      </span>
+                    </div>
                   </div>
                 </article>
               </MotionReveal>

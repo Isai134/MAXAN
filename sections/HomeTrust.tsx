@@ -10,18 +10,19 @@ export function HomeTrust() {
         <div className="grid gap-12 lg:grid-cols-[.85fr_1.15fr] lg:items-center">
           <MotionReveal>
             <p className="eyebrow">Confianza verificable</p>
-            <h2 className="section-title">Un organismo acreditado, con reglas claras.</h2>
+            <h2 className="section-title">Un organismo con reglas claras.</h2>
             <p className="body-copy mt-6">
-              MAXAN está acreditado ante la Entidad Mexicana de Acreditación como Organismo de
-              Certificación de Producto, con el número 155/19.
+              MAXAN integra certificación de productos, sistemas de gestión y servicios de
+              inspección. Consulta con nuestro equipo el alcance y la acreditación aplicables a tu
+              proceso.
             </p>
-            <div className="mt-8 overflow-hidden rounded-3xl border border-ink/10 bg-white p-3 shadow-card">
+            <div className="mt-8 border-y border-ink/15 py-3">
               <Image
                 src="/images/archive/web_registro_EMA_e85a60a59c.jpg"
                 width={1600}
                 height={500}
                 alt="Registro de acreditación EMA de MAXAN"
-                className="w-full rounded-2xl"
+                className="w-full"
               />
             </div>
           </MotionReveal>

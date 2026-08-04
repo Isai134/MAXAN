@@ -7,7 +7,7 @@ import { useState } from 'react';
 export function Accordion({ items }: { items: { question: string; answer: string }[] }) {
   const [active, setActive] = useState<number | null>(0);
   return (
-    <div className="divide-y divide-ink/10 rounded-3xl border border-ink/10 bg-white px-5 shadow-soft sm:px-8">
+    <div className="divide-y divide-ink/10 border-y border-ink/15">
       {items.map((item, index) => {
         const open = active === index;
         return (
@@ -15,7 +15,7 @@ export function Accordion({ items }: { items: { question: string; answer: string
             <button
               type="button"
               onClick={() => setActive(open ? null : index)}
-              className="flex w-full items-start justify-between gap-6 py-6 text-left"
+              className="flex w-full items-start justify-between gap-6 py-6 text-left sm:py-7"
               aria-expanded={open}
             >
               <span className="text-base font-semibold leading-7 text-ink sm:text-lg">

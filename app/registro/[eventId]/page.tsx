@@ -18,7 +18,7 @@ export default async function EventRegistrationPage({
         breadcrumbs={[{ label: 'Registro' }]}
       />
       <SectionWrapper className="max-w-3xl">
-        <div className="rounded-3xl border border-ink/10 bg-white p-8 text-center shadow-card">
+        <div className="border-y border-ink/15 py-10 text-center">
           <CalendarCheck className="mx-auto h-12 w-12 text-maxan-700" />
           <h2 className="mt-6 text-2xl font-semibold">Solicita el formato de inscripción</h2>
           <p className="mt-4 leading-8 text-slate-600">

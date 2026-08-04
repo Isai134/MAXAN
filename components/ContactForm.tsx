@@ -20,9 +20,7 @@ export function ContactForm({ serviceRequest = false }: { serviceRequest?: boole
       });
       if (!response.ok) throw new Error('Request failed');
       setStatus('success');
-      setMessage(
-        'Recibimos tus datos. El formulario está listo para conectarse al canal de envío definitivo.',
-      );
+      setMessage('Gracias. Recibimos tus datos y atenderemos tu solicitud a la brevedad.');
     } catch {
       setStatus('error');
       setMessage('No fue posible procesar el formulario. Escríbenos a informes@maxan.com.mx.');
@@ -32,7 +30,7 @@ export function ContactForm({ serviceRequest = false }: { serviceRequest?: boole
   return (
     <form
       action={submit}
-      className="rounded-[2rem] border border-ink/10 bg-white p-6 shadow-card sm:p-8"
+      className="border-y border-ink/15 py-8 sm:py-10"
       aria-label={serviceRequest ? 'Solicitud de servicio' : 'Formulario de contacto'}
     >
       <div className="grid gap-5 sm:grid-cols-2">
@@ -56,10 +54,17 @@ export function ContactForm({ serviceRequest = false }: { serviceRequest?: boole
             <select
               name="service"
               required
-              className="min-h-12 w-full rounded-xl border border-ink/15 bg-white px-4 focus:border-maxan-500 focus:outline-none"
+              className="min-h-12 w-full border-b border-ink/15 bg-transparent px-1 focus:border-maxan-500 focus:outline-none"
             >
               <option value="">Selecciona una opción</option>
-              <option>Certificación NMX-R-025-SCFI-2015</option>
+              <option>Distintivo NMX-R-025-SCFI-2015</option>
+              <option>Sistema de gestión ISO 9001</option>
+              <option>Sistema de gestión ISO 14001</option>
+              <option>Sistema de gestión ISO 45001</option>
+              <option>Sistema de gestión ISO 22001</option>
+              <option>Sistema de gestión ISO 37001</option>
+              <option>Sistema de gestión ISO 21001</option>
+              <option>Unidad de inspección</option>
               <option>Capacitación</option>
               <option>Curso</option>
               <option>Otro</option>
@@ -73,7 +78,7 @@ export function ContactForm({ serviceRequest = false }: { serviceRequest?: boole
             required
             rows={6}
             placeholder="Cuéntanos qué necesitas..."
-            className="w-full rounded-xl border border-ink/15 px-4 py-3 focus:border-maxan-500 focus:outline-none"
+            className="w-full border-y border-ink/15 bg-transparent px-1 py-3 focus:border-maxan-500 focus:outline-none"
           />
         </label>
       </div>
@@ -123,7 +128,7 @@ function Field({
         type={type}
         required
         placeholder={placeholder}
-        className="min-h-12 w-full rounded-xl border border-ink/15 px-4 focus:border-maxan-500 focus:outline-none"
+        className="min-h-12 w-full border-b border-ink/15 bg-transparent px-1 focus:border-maxan-500 focus:outline-none"
       />
     </label>
   );

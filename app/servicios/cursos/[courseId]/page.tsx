@@ -55,7 +55,7 @@ export default async function CoursePage({ params }: { params: Promise<{ courseI
       <SectionWrapper>
         <div className="grid gap-12 lg:grid-cols-[.75fr_1.25fr]">
           <div>
-            <div className="relative aspect-[3/4] overflow-hidden rounded-[2rem] bg-maxan-50 shadow-card lg:sticky lg:top-32">
+            <div className="relative aspect-[3/4] overflow-hidden bg-maxan-100 lg:sticky lg:top-32">
               <Image
                 src={localAsset(course.cover?.url)}
                 alt={`Portada del curso ${course.Title}`}
@@ -65,14 +65,17 @@ export default async function CoursePage({ params }: { params: Promise<{ courseI
               />
             </div>
           </div>
-          <div className="space-y-8">
-            {sections.map(([title, content]) => (
+          <div className="border-t border-ink/15">
+            {sections.map(([title, content], index) => (
               <section
                 key={title}
-                className="rounded-3xl border border-ink/10 bg-white p-7 shadow-soft"
+                className="grid gap-4 border-b border-ink/15 py-8 sm:grid-cols-[110px_1fr] sm:py-10"
               >
-                <h2 className="text-2xl font-semibold">{title}</h2>
-                <div className="mt-5">
+                <div>
+                  <p className="font-serif text-4xl leading-none text-maxan-600">0{index + 1}</p>
+                  <h2 className="mt-4 text-xl font-semibold">{title}</h2>
+                </div>
+                <div>
                   <RichText content={content} />
                 </div>
               </section>

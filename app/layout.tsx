@@ -8,7 +8,7 @@ import '@/styles/globals.css';
 export const metadata: Metadata = {
   metadataBase: new URL(siteConfig.url),
   title: {
-    default: `${siteConfig.name} | NMX-R-025-SCFI-2015`,
+    default: `${siteConfig.name} | Certificación y sistemas de gestión`,
     template: `%s | ${siteConfig.name}`,
   },
   description: siteConfig.description,

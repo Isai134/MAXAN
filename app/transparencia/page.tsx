@@ -21,14 +21,14 @@ export default function TransparencyPage() {
         description="Procedimientos, derechos, reglamentos, formatos y reportes de centros de trabajo certificados, disponibles en un solo lugar."
         breadcrumbs={[{ label: 'Transparencia' }]}
         aside={
-          <div className="rounded-3xl border border-maxan-200 bg-white/80 p-6 shadow-soft">
-            <Scale className="h-8 w-8 text-maxan-700" />
-            <p className="mt-4 font-semibold">Objetividad e imparcialidad</p>
+          <div className="border-l-2 border-maxan-500 pl-5">
+            <Scale className="h-7 w-7 text-maxan-700" />
+            <p className="mt-3 font-semibold">Objetividad e imparcialidad</p>
           </div>
         }
       />
       <SectionWrapper>
-        <section className="rounded-3xl border border-maxan-200 bg-maxan-50 p-7">
+        <section className="border-l-2 border-maxan-500 pl-6">
           <h2 className="text-2xl font-semibold">Apoyo financiero</h2>
           <p className="mt-4 max-w-5xl leading-8 text-slate-600">
             El apoyo financiero de MAXAN es solventado por sus socios y ha decidido reservar un

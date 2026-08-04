@@ -44,7 +44,7 @@ export default async function ArticlePage({ params }: { params: Promise<{ articl
         ]}
       />
       <SectionWrapper className="max-w-5xl">
-        <div className="relative mb-12 aspect-[16/8] overflow-hidden rounded-[2rem] bg-maxan-50 shadow-card">
+        <div className="relative mb-12 aspect-[16/8] overflow-hidden bg-maxan-100">
           <Image
             src={localAsset(article.Cover?.url)}
             alt={`Imagen de ${article.Title}`}
@@ -53,7 +53,7 @@ export default async function ArticlePage({ params }: { params: Promise<{ articl
             className="object-cover"
           />
         </div>
-        <article className="rounded-3xl border border-ink/10 bg-white p-7 shadow-soft sm:p-10">
+        <article className="border-y border-ink/15 py-7 sm:py-10">
           <RichText content={article.Content} />
         </article>
       </SectionWrapper>

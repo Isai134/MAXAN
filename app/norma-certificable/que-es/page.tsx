@@ -50,23 +50,20 @@ export default function NormPage() {
               acreditado por la Entidad Mexicana de Acreditación A.C.
             </p>
           </MotionReveal>
-          <MotionReveal
-            delay={0.1}
-            className="rounded-3xl border border-ink/10 bg-white p-7 shadow-card"
-          >
+          <MotionReveal delay={0.1} className="border-y border-ink/15 py-2">
             <List items={normPractices} />
           </MotionReveal>
         </div>
       </SectionWrapper>
       <div className="bg-mist">
         <SectionWrapper>
-          <div className="grid gap-6 lg:grid-cols-2">
-            <MotionReveal className="rounded-3xl bg-white p-8 shadow-soft">
+          <div className="grid gap-12 lg:grid-cols-2">
+            <MotionReveal className="border-t-2 border-maxan-500 py-8">
               <Users className="h-9 w-9 text-maxan-700" />
               <h2 className="mt-6 text-3xl font-semibold">Beneficios para el personal</h2>
               <List items={staffBenefits} />
             </MotionReveal>
-            <MotionReveal delay={0.1} className="rounded-3xl bg-ink p-8 text-white shadow-card">
+            <MotionReveal delay={0.1} className="border-t-2 border-ink bg-ink px-8 py-8 text-white">
               <Building2 className="h-9 w-9 text-maxan-300" />
               <h2 className="mt-6 text-3xl font-semibold">Beneficios para la organización</h2>
               <div className="[&_li]:!text-white/70 [&_svg]:!text-maxan-300">
@@ -81,11 +78,13 @@ export default function NormPage() {
           <p className="eyebrow">Programa de implantación</p>
           <h2 className="section-title">Seis etapas, de la autoevaluación a la vigilancia.</h2>
         </MotionReveal>
-        <div className="mt-12 grid gap-5 md:grid-cols-2 lg:grid-cols-3">
+        <div className="mt-12 grid gap-x-10 border-t border-ink/15 md:grid-cols-2 lg:grid-cols-3">
           {implementationSteps.map((step, index) => (
             <MotionReveal key={step.title} delay={index * 0.05}>
-              <article className="h-full rounded-3xl border border-ink/10 bg-white p-7">
-                <span className="text-5xl font-semibold text-maxan-200">0{index + 1}</span>
+              <article className="h-full border-b border-ink/15 py-7">
+                <span className="font-serif text-5xl leading-none text-maxan-600">
+                  0{index + 1}
+                </span>
                 <h3 className="mt-5 text-xl font-semibold">{step.title}</h3>
                 <p className="mt-3 leading-7 text-slate-600">{step.text}</p>
               </article>
@@ -101,12 +100,13 @@ export default function NormPage() {
               El reconocimiento crece con las medidas implementadas.
             </h2>
           </MotionReveal>
-          <div className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
-            {certificationLevels.map((level) => (
-              <article key={level.name} className={`rounded-3xl p-7 ${level.color}`}>
+          <div className="mt-10 grid gap-x-8 border-t border-ink/15 sm:grid-cols-2 lg:grid-cols-4">
+            {certificationLevels.map((level, index) => (
+              <article key={level.name} className="border-b border-ink/15 py-7">
                 <HeartHandshake className="h-7 w-7" />
-                <h3 className="mt-6 text-2xl font-semibold">{level.name}</h3>
-                <p className="mt-3 text-sm leading-6 opacity-80">{level.detail}</p>
+                <p className="mt-6 font-serif text-4xl leading-none text-maxan-600">0{index + 1}</p>
+                <h3 className="mt-3 text-2xl font-semibold">{level.name}</h3>
+                <p className="mt-3 text-sm leading-6 text-slate-600">{level.detail}</p>
               </article>
             ))}
           </div>

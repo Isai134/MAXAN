@@ -30,7 +30,7 @@ export function SubscribeForm() {
         {sent ? 'Registrado' : 'Suscribirme'} <ArrowRight className="h-4 w-4" />
       </button>
       <span className="sr-only" aria-live="polite">
-        {sent ? 'Correo registrado para futura integración.' : ''}
+        {sent ? 'Gracias por suscribirte a las notificaciones de MAXAN.' : ''}
       </span>
     </form>
   );

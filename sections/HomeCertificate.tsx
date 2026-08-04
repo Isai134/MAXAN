@@ -11,8 +11,8 @@ export function HomeCertificate() {
             <p className="eyebrow">Consulta pública</p>
             <h2 className="section-title">Verifica un certificado MAXAN.</h2>
             <p className="body-copy mt-5">
-              Ingresa el número de certificado para abrir su ficha. La ruta queda preparada para
-              conectarse al registro certificado.
+              Ingresa el número de certificado para consultar su estatus, vigencia y datos del
+              registro público de MAXAN.
             </p>
           </MotionReveal>
           <MotionReveal delay={0.12}>

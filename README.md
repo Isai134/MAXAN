@@ -26,7 +26,7 @@ npm run dev
 
 Abre [http://localhost:3000](http://localhost:3000).
 
-No se requiere ninguna variable de entorno para ejecutar el sitio localmente. El archivo `.env.example` documenta los puntos de integración opcionales.
+No se requiere ninguna variable de entorno para ejecutar el sitio localmente.
 
 ## Comandos
 
@@ -76,16 +76,11 @@ middleware/      utilidades de middleware
 
 Los archivos de `data/source/` son una instantánea del contenido público del CMS consultado durante la migración. Permiten auditar la procedencia del contenido y actualizar los adaptadores sin depender del CMS para ejecutar el sitio.
 
-## Formularios e integraciones
+## Registro local de certificados
 
-`app/api/contact/route.ts` valida las solicitudes y funciona localmente sin credenciales. Es el punto preparado para integrar posteriormente:
+El registro público se encuentra en `data/certificates.json`. Es un archivo versionado y se despliega junto con el proyecto; por ello, AWS Amplify lo incorpora automáticamente al construir desde Git.
 
-- proveedor de email;
-- API propia;
-- CRM;
-- webhook o flujo de WhatsApp.
-
-La consulta de certificados conserva las rutas públicas, pero no intenta inventar información: la base privada debe conectarse en una etapa posterior.
+Para actualizarlo, agrega o edita un registro con el número de certificado, organización, norma, alcance, fechas y estatus (`vigente` o `vencido`). La consulta pública usa ese mismo archivo durante la compilación.
 
 ## SEO y accesibilidad
 
