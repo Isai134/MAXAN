@@ -72,8 +72,8 @@ export default async function CoursePage({ params }: { params: Promise<{ courseI
                 className="grid gap-4 border-b border-ink/15 py-8 sm:grid-cols-[110px_1fr] sm:py-10"
               >
                 <div>
-                  <p className="font-serif text-4xl leading-none text-maxan-600">0{index + 1}</p>
-                  <h2 className="mt-4 text-xl font-semibold">{title}</h2>
+                  <p className="font-mono text-xs text-maxan-700">0{index + 1}</p>
+                  <h2 className="mt-4 font-serif text-xl font-normal">{title}</h2>
                 </div>
                 <div>
                   <RichText content={content} />

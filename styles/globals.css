@@ -2,25 +2,38 @@
 @tailwind components;
 @tailwind utilities;
 
+/*
+ * Design tokens — "Registro técnico".
+ * Colors are stored as RGB channels so Tailwind opacity modifiers work.
+ */
 :root {
   color-scheme: light;
-  --background: #fbfcfa;
+  --color-paper: 247 246 241; /* page background, warm paper */
+  --color-elevated: 255 255 255; /* raised surfaces: forms, menus, record panels */
+  --color-surface: 238 237 229; /* quiet alternate band */
+  --color-text-secondary: 61 72 67; /* body copy on paper — AA+ */
+  --color-text-muted: 92 102 97; /* metadata, captions — AA */
+  --color-warning: 154 91 11;
+  --color-danger: 163 49 42;
+  --background: rgb(var(--color-paper));
   --foreground: #15221d;
+  --focus: #4b622e;
 }
 
 * {
-  border-color: rgba(21, 34, 29, 0.12);
+  border-color: rgba(21, 34, 29, 0.14);
 }
 
 html {
   scroll-behavior: smooth;
-  scroll-padding-top: 7rem;
+  scroll-padding-top: 6rem;
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
   text-rendering: optimizeLegibility;
+  font-feature-settings: 'ss01', 'ss02';
 }
 
 ::selection {
@@ -29,29 +42,50 @@ body {
 }
 
 :focus-visible {
-  outline: 3px solid #94b16d;
+  outline: 2px solid var(--focus);
   outline-offset: 3px;
+}
+
+/* Dark surfaces need a light focus ring to stay visible. */
+.bg-ink :focus-visible {
+  outline-color: #b4ca96;
 }
 
 @layer components {
   .container-maxan {
-    @apply mx-auto w-full max-w-7xl px-5 sm:px-8 lg:px-10;
+    @apply mx-auto w-full max-w-[84rem] px-5 sm:px-8 lg:px-12;
   }
 
+  /* Small uppercase label, set in mono — used above section titles. */
   .eyebrow {
-    @apply mb-4 inline-flex items-center gap-2 text-xs font-bold uppercase tracking-[0.22em] text-maxan-700;
+    @apply mb-5 inline-flex items-center gap-3 font-mono text-[0.72rem] font-medium uppercase tracking-[0.14em] text-maxan-700;
+  }
+
+  .eyebrow::before {
+    content: '';
+    @apply inline-block h-px w-6 bg-current;
+  }
+
+  .display {
+    @apply text-balance font-serif text-[2.6rem] font-normal leading-[1.02] tracking-[-0.02em] text-ink sm:text-6xl lg:text-[4.75rem];
   }
 
   .section-title {
-    @apply text-balance text-3xl font-semibold tracking-[-0.035em] text-ink sm:text-4xl lg:text-5xl;
+    @apply text-balance font-serif text-[2rem] font-normal leading-[1.08] tracking-[-0.015em] text-ink sm:text-[2.6rem] lg:text-5xl;
   }
 
   .body-copy {
-    @apply text-pretty text-base leading-8 text-slate-600 sm:text-lg;
+    @apply max-w-prose text-pretty text-base leading-7 text-secondary sm:text-[1.0625rem] sm:leading-8;
   }
 
-  .glass-card {
-    @apply border border-white/70 bg-white/85 shadow-card backdrop-blur-xl;
+  /* Monospace metadata: norm codes, certificate numbers, dates, indices. */
+  .meta {
+    @apply font-mono text-xs uppercase tracking-[0.08em] text-muted;
+  }
+
+  /* Hairline-ruled row used for indices and lists. */
+  .rule-t {
+    @apply border-t border-ink/15;
   }
 }
 

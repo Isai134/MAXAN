@@ -1,9 +1,32 @@
 import type { Metadata, Viewport } from 'next';
+import { IBM_Plex_Mono, IBM_Plex_Sans, Newsreader } from 'next/font/google';
 import type { ReactNode } from 'react';
 import { siteConfig } from '@/config/site';
 import { SiteLayout } from '@/layouts/SiteLayout';
 import { AppProviders } from '@/providers/AppProviders';
 import '@/styles/globals.css';
+
+const sans = IBM_Plex_Sans({
+  subsets: ['latin'],
+  weight: ['400', '500', '600'],
+  variable: '--font-sans',
+  display: 'swap',
+});
+
+const serif = Newsreader({
+  subsets: ['latin'],
+  axes: ['opsz'],
+  style: ['normal', 'italic'],
+  variable: '--font-serif',
+  display: 'swap',
+});
+
+const mono = IBM_Plex_Mono({
+  subsets: ['latin'],
+  weight: ['400', '500'],
+  variable: '--font-mono',
+  display: 'swap',
+});
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteConfig.url),
@@ -19,7 +42,7 @@ export const metadata: Metadata = {
   formatDetection: { telephone: true, email: true, address: true },
 };
 
-export const viewport: Viewport = { width: 'device-width', initialScale: 1, themeColor: '#7a9c49' };
+export const viewport: Viewport = { width: 'device-width', initialScale: 1, themeColor: '#f7f6f1' };
 
 export default function RootLayout({ children }: { children: ReactNode }) {
   const jsonLd = {
@@ -41,11 +64,11 @@ export default function RootLayout({ children }: { children: ReactNode }) {
     sameAs: Object.values(siteConfig.social),
   };
   return (
-    <html lang="es">
-      <body className="min-h-screen bg-[#fbfcfa] font-sans antialiased">
+    <html lang="es" className={`${sans.variable} ${serif.variable} ${mono.variable}`}>
+      <body className="min-h-screen bg-paper font-sans text-ink antialiased">
         <a
           href="#main-content"
-          className="sr-only z-[100] rounded bg-white px-4 py-3 focus:not-sr-only focus:fixed focus:left-4 focus:top-4"
+          className="sr-only z-[100] bg-ink px-4 py-3 text-sm font-medium text-white focus:not-sr-only focus:fixed focus:left-4 focus:top-4"
         >
           Saltar al contenido
         </a>

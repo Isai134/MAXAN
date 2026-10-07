@@ -25,7 +25,7 @@ export default function AuditorsPage() {
           {auditors.map((auditor, index) => (
             <MotionReveal key={auditor.name} delay={index * 0.04}>
               <article className="group border-b border-ink/15 py-6">
-                <div className="relative aspect-[4/4.4] bg-maxan-50">
+                <div className="relative aspect-[4/4.4] bg-surface">
                   <Image
                     src={auditor.image}
                     alt={`Retrato de ${auditor.name}`}
@@ -35,7 +35,7 @@ export default function AuditorsPage() {
                   />
                 </div>
                 <div className="pt-5">
-                  <h2 className="text-xl font-semibold leading-7">{auditor.name}</h2>
+                  <h2 className="font-serif text-xl font-normal leading-7">{auditor.name}</h2>
                   <p className="mt-2 text-sm font-semibold text-maxan-700">{auditor.role}</p>
                 </div>
               </article>

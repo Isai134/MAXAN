@@ -45,13 +45,13 @@ export function SelfAssessment() {
               }
               className="mt-1 h-5 w-5 accent-maxan-600"
             />
-            <span className="leading-7 text-slate-700">{requirement}</span>
+            <span className="leading-7 text-secondary">{requirement}</span>
           </label>
         ))}
       </div>
-      <aside className="h-fit border-y border-ink bg-ink py-8 pl-6 pr-2 text-white lg:sticky lg:top-32">
+      <aside className="h-fit border border-ink bg-ink py-8 pl-6 pr-2 text-white lg:sticky lg:top-32">
         <CheckCircle2 className="h-9 w-9 text-maxan-300" />
-        <p className="mt-8 text-6xl font-semibold tracking-tight">{percent}%</p>
+        <p className="mt-8 font-serif text-6xl font-normal tracking-tight">{percent}%</p>
         <p className="mt-3 leading-7 text-white/65">
           Avance orientativo con base en los temas principales. No sustituye la evaluación ni la
           auditoría formal.

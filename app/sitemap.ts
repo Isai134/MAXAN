@@ -15,6 +15,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     '/productos',
     '/productos/distintivo-nmx-r-025',
     '/sistemas-gestion',
+    '/iso-42001',
     '/unidades-inspeccion',
     '/servicios/cursos',
     '/servicios/webinars',

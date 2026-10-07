@@ -50,8 +50,8 @@ function ContactCard({
   return (
     <div className="border-t border-ink/15 pt-6">
       <Icon className="h-7 w-7 text-maxan-700" />
-      <h2 className="mt-5 font-semibold">{title}</h2>
-      <p className="mt-2 whitespace-pre-line text-sm leading-7 text-slate-600">{content}</p>
+      <h2 className="mt-5 font-sans font-medium">{title}</h2>
+      <p className="mt-2 whitespace-pre-line text-sm leading-7 text-secondary">{content}</p>
     </div>
   );
 }

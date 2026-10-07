@@ -18,9 +18,9 @@ export function MotionReveal({
       className={className}
       initial="hidden"
       whileInView="visible"
-      viewport={{ once: true, amount: 0.16 }}
+      viewport={{ once: true, amount: 0.12 }}
       variants={fadeUp}
-      transition={{ duration: 0.58, ease: [0.22, 1, 0.36, 1], delay }}
+      transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1], delay }}
     >
       {children}
     </motion.div>

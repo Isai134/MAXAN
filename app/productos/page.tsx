@@ -25,7 +25,7 @@ export default function ProductsPage() {
         <MotionReveal className="mx-auto max-w-5xl">
           <article className="grid gap-10 border-y border-ink/15 py-10 lg:grid-cols-[.7fr_1.3fr] lg:py-16">
             <div className="flex items-start gap-4 lg:block">
-              <p className="font-serif text-7xl leading-none tracking-[-.08em] text-maxan-600 sm:text-9xl">
+              <p className="font-serif text-7xl leading-none tracking-[-0.02em] text-maxan-600 sm:text-9xl">
                 025
               </p>
               <BadgeCheck
@@ -35,10 +35,10 @@ export default function ProductsPage() {
             </div>
             <div className="border-t border-ink/15 pt-8 lg:border-l lg:border-t-0 lg:pl-12 lg:pt-1">
               <p className="eyebrow">Distintivo</p>
-              <h2 className="text-3xl font-semibold tracking-tight sm:text-4xl">
+              <h2 className="font-serif text-3xl font-normal tracking-[-0.015em] sm:text-4xl">
                 NMX-R-025-SCFI-2015
               </h2>
-              <p className="mt-5 max-w-2xl text-lg leading-8 text-slate-600">
+              <p className="mt-5 max-w-2xl text-lg leading-8 text-secondary">
                 Igualdad Laboral y No Discriminación. Reconoce a los centros de trabajo que integran
                 prácticas de igualdad, inclusión y respeto a los derechos laborales.
               </p>
@@ -52,7 +52,7 @@ export default function ProductsPage() {
           </article>
         </MotionReveal>
         <MotionReveal delay={0.08} className="mx-auto mt-10 max-w-5xl">
-          <p className="border-l-2 border-maxan-500 pl-6 text-sm leading-7 text-slate-600">
+          <p className="border-l-2 border-maxan-600 pl-6 text-sm leading-7 text-secondary">
             El uso del distintivo y de la marca está sujeto a la evaluación correspondiente y al
             reglamento vigente de MAXAN.
           </p>

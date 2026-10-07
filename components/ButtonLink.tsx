@@ -2,22 +2,35 @@ import { ArrowRight } from 'lucide-react';
 import Link from 'next/link';
 import type { ReactNode } from 'react';
 
+const base =
+  'group inline-flex min-h-12 items-center justify-center gap-3 px-6 text-sm font-medium transition-colors duration-200';
+
+const variants = {
+  primary: 'bg-ink text-white hover:bg-maxan-800',
+  secondary: 'border border-ink/25 bg-transparent text-ink hover:border-ink hover:bg-ink/[0.04]',
+  onDark: 'bg-white text-ink hover:bg-maxan-100',
+  onDarkSecondary: 'border border-white/30 text-white hover:border-white hover:bg-white/[0.06]',
+} as const;
+
 export function ButtonLink({
   href,
   children,
   secondary = false,
+  variant,
 }: {
   href: string;
   children: ReactNode;
   secondary?: boolean;
+  variant?: keyof typeof variants;
 }) {
+  const style = variants[variant ?? (secondary ? 'secondary' : 'primary')];
   return (
-    <Link
-      href={href}
-      className={`inline-flex items-center justify-center gap-2 rounded-full px-6 py-3.5 text-sm font-semibold transition hover:-translate-y-0.5 ${secondary ? 'border border-ink/15 bg-white text-ink hover:border-maxan-400' : 'bg-ink text-white hover:bg-maxan-700'}`}
-    >
+    <Link href={href} className={`${base} ${style}`}>
       {children}
-      <ArrowRight className="h-4 w-4" aria-hidden="true" />
+      <ArrowRight
+        className="h-4 w-4 transition-transform duration-200 group-hover:translate-x-0.5"
+        aria-hidden="true"
+      />
     </Link>
   );
 }

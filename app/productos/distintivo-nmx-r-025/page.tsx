@@ -22,7 +22,7 @@ function CheckedList({ items }: { items: readonly string[] }) {
   return (
     <ul className="space-y-4">
       {items.map((item) => (
-        <li key={item} className="flex gap-3 leading-7 text-slate-600">
+        <li key={item} className="flex gap-3 leading-7 text-secondary">
           <Check className="mt-1 h-5 w-5 shrink-0 text-maxan-700" />
           {item}
         </li>
@@ -64,7 +64,7 @@ export default function Nmx025DistinctionPage() {
           </MotionReveal>
         </div>
       </SectionWrapper>
-      <div className="bg-mist">
+      <div className="bg-surface">
         <SectionWrapper>
           <MotionReveal className="max-w-3xl">
             <p className="eyebrow">Por qué es importante</p>
@@ -90,12 +90,10 @@ export default function Nmx025DistinctionPage() {
           {commercialProcess.map(([title, description], index) => (
             <MotionReveal key={title} delay={index * 0.04}>
               <article className="grid gap-4 border-b border-ink/15 py-7 sm:grid-cols-[96px_1fr] sm:items-start sm:py-9">
-                <span className="font-serif text-5xl leading-none text-maxan-600">
-                  0{index + 1}
-                </span>
+                <span className="font-mono text-xs text-maxan-700">0{index + 1}</span>
                 <div>
-                  <h3 className="text-xl font-semibold">{title}</h3>
-                  <p className="mt-2 leading-7 text-slate-600">{description}</p>
+                  <h3 className="font-serif text-xl font-normal">{title}</h3>
+                  <p className="mt-2 leading-7 text-secondary">{description}</p>
                 </div>
               </article>
             </MotionReveal>

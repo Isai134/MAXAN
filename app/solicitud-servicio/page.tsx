@@ -20,10 +20,10 @@ export default function ServiceRequestPage() {
       />
       <SectionWrapper>
         <div className="grid gap-10 lg:grid-cols-[.36fr_1fr]">
-          <aside className="h-fit border-l-2 border-maxan-500 pl-6 lg:sticky lg:top-32">
+          <aside className="h-fit border-l-2 border-maxan-600 pl-6 lg:sticky lg:top-32">
             <FileText className="h-8 w-8 text-maxan-700" />
-            <h2 className="mt-6 text-2xl font-semibold">Formato del distintivo</h2>
-            <p className="mt-3 leading-7 text-slate-600">
+            <h2 className="mt-6 font-serif text-2xl font-normal">Formato del distintivo</h2>
+            <p className="mt-3 leading-7 text-secondary">
               También puedes requisitar el documento y enviarlo firmado a
               direccioncomercial@maxan.com.mx.
             </p>
@@ -33,7 +33,7 @@ export default function ServiceRequestPage() {
                 target="_blank"
                 className="flex items-center gap-2 border-b border-ink/15 pb-3 text-sm font-semibold text-maxan-800 transition hover:border-maxan-600"
               >
-                <span className="border-l-2 border-maxan-500 pl-2 text-[10px] tracking-[.14em]">
+                <span className="border-l-2 border-maxan-600 pl-2 font-mono text-[10px] tracking-[.14em]">
                   PDF
                 </span>
                 <Download className="h-4 w-4" /> Solicitud NMX-R-025
@@ -42,7 +42,7 @@ export default function ServiceRequestPage() {
                 href="/documents/forms/SolicitudCertificacionProducto.docx"
                 className="flex items-center gap-2 border-b border-ink/15 pb-3 text-sm font-semibold text-maxan-800 transition hover:border-maxan-600"
               >
-                <span className="border-l-2 border-maxan-500 pl-2 text-[10px] tracking-[.14em]">
+                <span className="border-l-2 border-maxan-600 pl-2 font-mono text-[10px] tracking-[.14em]">
                   DOCX
                 </span>
                 <Download className="h-4 w-4" /> Solicitud NMX-R-025

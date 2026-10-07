@@ -21,23 +21,23 @@ export default function TransparencyPage() {
         description="Procedimientos, derechos, reglamentos, formatos y reportes de centros de trabajo certificados, disponibles en un solo lugar."
         breadcrumbs={[{ label: 'Transparencia' }]}
         aside={
-          <div className="border-l-2 border-maxan-500 pl-5">
+          <div className="border-l-2 border-maxan-600 pl-5">
             <Scale className="h-7 w-7 text-maxan-700" />
             <p className="mt-3 font-semibold">Objetividad e imparcialidad</p>
           </div>
         }
       />
       <SectionWrapper>
-        <section className="border-l-2 border-maxan-500 pl-6">
-          <h2 className="text-2xl font-semibold">Apoyo financiero</h2>
-          <p className="mt-4 max-w-5xl leading-8 text-slate-600">
+        <section className="border-l-2 border-maxan-600 pl-6">
+          <h2 className="font-serif text-2xl font-normal">Apoyo financiero</h2>
+          <p className="mt-4 max-w-5xl leading-8 text-secondary">
             El apoyo financiero de MAXAN es solventado por sus socios y ha decidido reservar un
             porcentaje para conservar una estabilidad financiera. Adicionalmente, se cuenta con una
             fianza contratada para asegurar el cumplimiento de cada servicio, derechos y deberes de
             solicitantes y clientes.
           </p>
           <h3 className="mt-7 font-semibold">Derechos de los solicitantes</h3>
-          <p className="mt-2 text-slate-600">
+          <p className="mt-2 text-secondary">
             No ser discriminado. Recibir un servicio de calidad y calidez. Ser tratado con igualdad.
           </p>
         </section>

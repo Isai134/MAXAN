@@ -22,10 +22,10 @@ export default function AboutPage() {
         description={aboutContent.accreditation}
         breadcrumbs={[{ label: 'Nosotros' }]}
         aside={
-          <div className="border-l-2 border-maxan-500 pl-5">
+          <div className="border-l-2 border-maxan-600 pl-5">
             <BadgeCheck className="h-7 w-7 text-maxan-700" />
             <p className="mt-3 text-xl font-semibold">Acreditación 155/19</p>
-            <p className="mt-1 text-sm leading-6 text-slate-600">
+            <p className="mt-1 text-sm leading-6 text-secondary">
               Entidad Mexicana de Acreditación
             </p>
           </div>
@@ -51,7 +51,7 @@ export default function AboutPage() {
           </MotionReveal>
         </div>
       </SectionWrapper>
-      <div className="bg-mist">
+      <div className="bg-surface">
         <SectionWrapper>
           <div className="grid gap-x-10 border-t border-ink/15 lg:grid-cols-3">
             {[
@@ -62,13 +62,13 @@ export default function AboutPage() {
               <MotionReveal key={title as string} className="h-full">
                 <article className="h-full border-b border-ink/15 py-8">
                   <Icon className="h-8 w-8 text-maxan-700" />
-                  <h2 className="mt-6 text-2xl font-semibold">{title as string}</h2>
-                  <p className="mt-5 leading-7 text-slate-600">{text as string}</p>
+                  <h2 className="mt-6 font-serif text-2xl font-normal">{title as string}</h2>
+                  <p className="mt-5 leading-7 text-secondary">{text as string}</p>
                 </article>
               </MotionReveal>
             ))}
           </div>
-          <p className="mt-8 border-l-2 border-maxan-500 pl-6 leading-7 text-maxan-950">
+          <p className="mt-8 border-l-2 border-maxan-600 pl-6 leading-7 text-maxan-950">
             {aboutContent.equalPolicy}
           </p>
         </SectionWrapper>
@@ -89,8 +89,8 @@ export default function AboutPage() {
                   height={110}
                   className="mx-auto h-20 w-20 object-contain"
                 />
-                <h3 className="mt-5 text-lg font-semibold">{value.title}</h3>
-                <p className="mt-3 text-sm leading-6 text-slate-600">{value.description}</p>
+                <h3 className="mt-5 font-serif text-lg font-normal">{value.title}</h3>
+                <p className="mt-3 text-sm leading-6 text-secondary">{value.description}</p>
               </article>
             </MotionReveal>
           ))}

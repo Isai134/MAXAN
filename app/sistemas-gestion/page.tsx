@@ -29,7 +29,7 @@ export default function ManagementSystemsPage() {
             <p className="font-serif text-[clamp(7rem,16vw,14rem)] leading-[.72] tracking-[-.1em] text-maxan-500">
               ISO
             </p>
-            <p className="mt-10 max-w-sm text-lg leading-8 text-slate-600">
+            <p className="mt-10 max-w-sm text-lg leading-8 text-secondary">
               Cada proceso se define con base en las necesidades de la organización, el alcance
               solicitado y los requisitos aplicables de la norma.
             </p>
@@ -38,12 +38,12 @@ export default function ManagementSystemsPage() {
             {managementSystemStandards.map((standard, index) => (
               <MotionReveal key={standard.code} delay={index * 0.05}>
                 <article className="grid gap-4 border-b border-ink/15 py-8 sm:grid-cols-[130px_1fr_auto] sm:items-start sm:py-10">
-                  <p className="text-2xl font-semibold tracking-tight text-maxan-700">
-                    {standard.code}
-                  </p>
+                  <p className="font-mono text-xl tracking-tight text-maxan-700">{standard.code}</p>
                   <div>
-                    <h2 className="text-2xl font-semibold tracking-tight">{standard.title}</h2>
-                    <p className="mt-3 max-w-xl leading-7 text-slate-600">{standard.description}</p>
+                    <h2 className="font-serif text-2xl font-normal tracking-[-0.015em]">
+                      {standard.title}
+                    </h2>
+                    <p className="mt-3 max-w-xl leading-7 text-secondary">{standard.description}</p>
                   </div>
                   <ArrowUpRight
                     className="hidden h-5 w-5 text-maxan-700 sm:block"
@@ -55,15 +55,15 @@ export default function ManagementSystemsPage() {
           </div>
         </div>
       </SectionWrapper>
-      <div className="bg-mist">
+      <div className="bg-surface">
         <SectionWrapper>
           <div className="grid gap-10 border-y border-ink/15 py-10 lg:grid-cols-[1fr_auto] lg:items-center">
             <div>
               <p className="eyebrow">Antes de iniciar</p>
-              <h2 className="text-3xl font-semibold tracking-tight">
+              <h2 className="font-serif text-3xl font-normal tracking-[-0.015em]">
                 Confirmemos el alcance adecuado.
               </h2>
-              <p className="mt-4 max-w-3xl leading-7 text-slate-600">
+              <p className="mt-4 max-w-3xl leading-7 text-secondary">
                 El equipo de MAXAN te orientará sobre la norma, el alcance de servicio y los
                 requisitos aplicables a tu organización.
               </p>

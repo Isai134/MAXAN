@@ -1,4 +1,5 @@
 import type { Config } from 'tailwindcss';
+import defaultTheme from 'tailwindcss/defaultTheme';
 
 const config: Config = {
   content: [
@@ -26,22 +27,26 @@ const config: Config = {
         },
         ink: '#15221d',
         mist: '#f5f7f4',
+        // Semantic tokens (see styles/globals.css)
+        paper: 'rgb(var(--color-paper) / <alpha-value>)',
+        elevated: 'rgb(var(--color-elevated) / <alpha-value>)',
+        surface: 'rgb(var(--color-surface) / <alpha-value>)',
+        muted: 'rgb(var(--color-text-muted) / <alpha-value>)',
+        secondary: 'rgb(var(--color-text-secondary) / <alpha-value>)',
+        warning: 'rgb(var(--color-warning) / <alpha-value>)',
+        danger: 'rgb(var(--color-danger) / <alpha-value>)',
       },
-      boxShadow: {
-        card: '0 22px 70px -35px rgba(21, 34, 29, .28)',
-        soft: '0 12px 40px -22px rgba(21, 34, 29, .24)',
+      fontFamily: {
+        sans: ['var(--font-sans)', ...defaultTheme.fontFamily.sans],
+        serif: ['var(--font-serif)', ...defaultTheme.fontFamily.serif],
+        mono: ['var(--font-mono)', ...defaultTheme.fontFamily.mono],
       },
-      backgroundImage: {
-        'hero-grid':
-          'linear-gradient(rgba(122,156,73,.08) 1px, transparent 1px), linear-gradient(90deg, rgba(122,156,73,.08) 1px, transparent 1px)',
+      maxWidth: {
+        prose: '66ch',
       },
-      keyframes: {
-        float: {
-          '0%, 100%': { transform: 'translateY(0)' },
-          '50%': { transform: 'translateY(-10px)' },
-        },
+      transitionTimingFunction: {
+        out: 'cubic-bezier(0.22, 1, 0.36, 1)',
       },
-      animation: { float: 'float 6s ease-in-out infinite' },
     },
   },
   plugins: [],

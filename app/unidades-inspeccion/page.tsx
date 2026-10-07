@@ -57,30 +57,28 @@ export default function InspectionUnitsPage() {
               <MotionReveal key={title as string} delay={index * 0.06}>
                 <article className="grid gap-4 border-b border-ink/15 py-8 sm:grid-cols-[80px_1fr_1.4fr] sm:items-start sm:py-10">
                   <CardIcon className="h-7 w-7 text-maxan-700" />
-                  <h2 className="text-2xl font-semibold">{title as string}</h2>
-                  <p className="leading-7 text-slate-600">{description as string}</p>
+                  <h2 className="font-serif text-2xl font-normal">{title as string}</h2>
+                  <p className="leading-7 text-secondary">{description as string}</p>
                 </article>
               </MotionReveal>
             );
           })}
         </div>
       </SectionWrapper>
-      <div className="bg-mist">
+      <div className="bg-surface">
         <SectionWrapper>
           <MotionReveal className="max-w-3xl">
             <p className="eyebrow">Cómo trabajamos</p>
             <h2 className="section-title">Un proceso claro desde la solicitud hasta el informe.</h2>
           </MotionReveal>
-          <div className="mt-10 border-l border-maxan-500 pl-6 sm:pl-10">
+          <div className="mt-10 border-l border-maxan-600 pl-6 sm:pl-10">
             {stages.map(([title, description], index) => (
               <MotionReveal key={title} delay={index * 0.06}>
                 <article className="grid gap-4 py-6 sm:grid-cols-[96px_1fr] sm:items-start sm:py-8">
-                  <span className="font-serif text-5xl leading-none text-maxan-600">
-                    0{index + 1}
-                  </span>
+                  <span className="font-mono text-xs text-maxan-700">0{index + 1}</span>
                   <div>
-                    <h2 className="text-xl font-semibold">{title}</h2>
-                    <p className="mt-2 leading-7 text-slate-600">{description}</p>
+                    <h2 className="font-serif text-xl font-normal">{title}</h2>
+                    <p className="mt-2 leading-7 text-secondary">{description}</p>
                   </div>
                 </article>
               </MotionReveal>

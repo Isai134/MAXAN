@@ -1,24 +1,38 @@
 import { ButtonLink } from '@/components/ButtonLink';
 import { MotionReveal } from '@/components/MotionReveal';
+import { siteConfig } from '@/config/site';
 
 export function CTA({ title = '¿Listo para iniciar tu proceso?' }: { title?: string }) {
   return (
-    <MotionReveal className="container-maxan py-8 sm:py-12">
-      <section className="relative overflow-hidden border-y border-ink bg-ink px-6 py-12 text-white sm:px-12 lg:px-16 lg:py-16">
-        <div
-          className="absolute -right-24 -top-24 h-72 w-72 rounded-full bg-maxan-500/30 blur-3xl"
-          aria-hidden="true"
-        />
-        <div className="relative flex flex-col gap-8 lg:flex-row lg:items-end lg:justify-between">
-          <div>
-            <p className="eyebrow !text-maxan-300">Hablemos</p>
-            <h2 className="max-w-3xl text-balance text-3xl font-semibold tracking-tight sm:text-4xl">
+    <MotionReveal className="border-t border-ink/15 bg-surface">
+      <section aria-labelledby="cta-title" className="container-maxan py-14 sm:py-16 lg:py-20">
+        <div className="grid gap-10 lg:grid-cols-12 lg:items-start lg:gap-8">
+          <div className="lg:col-span-7">
+            <p className="eyebrow">Siguiente paso</p>
+            <h2 id="cta-title" className="section-title">
               {title}
             </h2>
           </div>
-          <ButtonLink href="/contacto" secondary>
-            Contactar a MAXAN
-          </ButtonLink>
+          <div className="flex flex-col gap-6 lg:col-span-5">
+            <p className="body-copy">
+              Escríbenos o llama para confirmar la norma, el alcance y los requisitos aplicables a
+              tu organización.
+            </p>
+            <div className="space-y-1 font-mono text-sm text-secondary">
+              <a href={`mailto:${siteConfig.email}`} className="block hover:text-ink">
+                {siteConfig.email}
+              </a>
+              <a
+                href={`tel:${siteConfig.primaryPhone.replace(/-/g, '')}`}
+                className="block hover:text-ink"
+              >
+                {siteConfig.primaryPhone}
+              </a>
+            </div>
+            <ButtonLink href="/contacto" variant="primary">
+              Contactar a MAXAN
+            </ButtonLink>
+          </div>
         </div>
       </section>
     </MotionReveal>

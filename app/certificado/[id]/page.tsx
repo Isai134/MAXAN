@@ -43,25 +43,27 @@ export default async function CertificatePage({ params }: { params: Promise<{ id
       />
       <SectionWrapper className="max-w-5xl">
         <div className="grid gap-10 border-y border-ink/15 py-10 lg:grid-cols-[.7fr_1.3fr] lg:py-14">
-          <div className="border-l-2 border-maxan-500 pl-6">
+          <div className="border-l-2 border-maxan-600 pl-5">
             {isCurrent ? (
               <BadgeCheck className="h-10 w-10 text-maxan-700" aria-hidden="true" />
             ) : (
-              <CircleAlert className="h-10 w-10 text-slate-500" aria-hidden="true" />
+              <CircleAlert className="h-10 w-10 text-muted" aria-hidden="true" />
             )}
             <p
-              className={`mt-6 text-2xl font-semibold ${isCurrent ? 'text-maxan-800' : 'text-slate-600'}`}
+              className={`mt-6 text-2xl font-semibold ${isCurrent ? 'text-maxan-800' : 'text-secondary'}`}
             >
               {statusLabel}
             </p>
-            <p className="mt-3 text-sm leading-6 text-slate-600">
+            <p className="mt-3 text-sm leading-6 text-secondary">
               Vigencia hasta el {formatDate(certificate.validUntil)}.
             </p>
           </div>
           <div>
             <p className="eyebrow">Datos del certificado</p>
-            <h2 className="text-3xl font-semibold tracking-tight">{certificate.organization}</h2>
-            <p className="mt-4 max-w-2xl leading-7 text-slate-600">{certificate.standard}</p>
+            <h2 className="font-serif text-3xl font-normal tracking-[-0.015em]">
+              {certificate.organization}
+            </h2>
+            <p className="mt-4 max-w-2xl leading-7 text-secondary">{certificate.standard}</p>
             <dl className="mt-8 border-t border-ink/15">
               {[
                 ['Alcance', certificate.scope, FileCheck2],
@@ -79,7 +81,7 @@ export default async function CertificatePage({ params }: { params: Promise<{ id
                       <DetailIcon className="h-4 w-4 text-maxan-700" aria-hidden="true" />
                       {label as string}
                     </dt>
-                    <dd className="leading-7 text-slate-600">{value as string}</dd>
+                    <dd className="leading-7 text-secondary">{value as string}</dd>
                   </div>
                 );
               })}

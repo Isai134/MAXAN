@@ -32,10 +32,10 @@ export default function CalendarPage() {
       />
       <SectionWrapper>
         <div className="grid gap-12 lg:grid-cols-[.32fr_1fr]">
-          <aside className="h-fit border-l-2 border-maxan-500 pl-6 lg:sticky lg:top-32">
+          <aside className="h-fit border-l-2 border-maxan-600 pl-5 lg:sticky lg:top-32">
             <p className="eyebrow">Antes de registrarte</p>
-            <h2 className="text-2xl font-semibold">Aspectos a considerar</h2>
-            <ul className="mt-6 space-y-4 text-sm leading-6 text-slate-600">
+            <h2 className="font-serif text-2xl font-normal">Aspectos a considerar</h2>
+            <ul className="mt-6 space-y-4 text-sm leading-6 text-secondary">
               <li>Formas de pago: transferencia o depósito en cuenta.</li>
               <li>Las fechas están sujetas a cambios.</li>
               <li>Las actividades se realizan con un mínimo de 10 personas inscritas.</li>
@@ -50,7 +50,7 @@ export default function CalendarPage() {
               <MotionReveal key={`${date}-${title}`} delay={index * 0.02}>
                 <article className="grid gap-5 border-b border-ink/15 py-7 sm:grid-cols-[150px_1fr] sm:py-9">
                   <div>
-                    <p className="font-serif text-4xl leading-none text-maxan-600">
+                    <p className="font-mono text-xs text-maxan-700">
                       {String(index + 1).padStart(2, '0')}
                     </p>
                     <p className="mt-4 flex items-start gap-2 text-xs font-bold uppercase leading-5 tracking-[.14em] text-maxan-700">
@@ -59,8 +59,8 @@ export default function CalendarPage() {
                     </p>
                   </div>
                   <div>
-                    <h2 className="text-xl font-semibold leading-8">{title}</h2>
-                    <div className="mt-5 flex flex-wrap gap-x-5 gap-y-3 border-t border-ink/10 pt-4 text-sm text-slate-600">
+                    <h2 className="font-serif text-xl font-normal leading-8">{title}</h2>
+                    <div className="mt-5 flex flex-wrap gap-x-5 gap-y-3 border-t border-ink/15 pt-4 text-sm text-secondary">
                       <span className="flex items-center gap-2">
                         <Clock3 className="h-4 w-4 text-maxan-700" /> {duration}
                       </span>

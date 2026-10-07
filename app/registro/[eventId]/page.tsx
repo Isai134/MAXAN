@@ -20,8 +20,10 @@ export default async function EventRegistrationPage({
       <SectionWrapper className="max-w-3xl">
         <div className="border-y border-ink/15 py-10 text-center">
           <CalendarCheck className="mx-auto h-12 w-12 text-maxan-700" />
-          <h2 className="mt-6 text-2xl font-semibold">Solicita el formato de inscripción</h2>
-          <p className="mt-4 leading-8 text-slate-600">
+          <h2 className="mt-6 font-serif text-2xl font-normal">
+            Solicita el formato de inscripción
+          </h2>
+          <p className="mt-4 leading-8 text-secondary">
             Las inscripciones deben realizarse con al menos siete días de anticipación. Confirma
             fecha y cupo con la Dirección Comercial.
           </p>

@@ -7,18 +7,22 @@ import { useState } from 'react';
 export function Accordion({ items }: { items: { question: string; answer: string }[] }) {
   const [active, setActive] = useState<number | null>(0);
   return (
-    <div className="divide-y divide-ink/10 border-y border-ink/15">
+    <div className="divide-y divide-ink/15 border-y border-ink/15">
       {items.map((item, index) => {
         const open = active === index;
+        const buttonId = `accordion-button-${index}`;
+        const panelId = `accordion-panel-${index}`;
         return (
           <div key={item.question}>
             <button
               type="button"
+              id={buttonId}
               onClick={() => setActive(open ? null : index)}
               className="flex w-full items-start justify-between gap-6 py-6 text-left sm:py-7"
               aria-expanded={open}
+              aria-controls={panelId}
             >
-              <span className="text-base font-semibold leading-7 text-ink sm:text-lg">
+              <span className="font-sans text-lg font-medium leading-7 text-ink">
                 {item.question}
               </span>
               <Plus
@@ -29,12 +33,15 @@ export function Accordion({ items }: { items: { question: string; answer: string
             <AnimatePresence initial={false}>
               {open && (
                 <motion.div
+                  id={panelId}
+                  role="region"
+                  aria-labelledby={buttonId}
                   initial={{ height: 0, opacity: 0 }}
                   animate={{ height: 'auto', opacity: 1 }}
                   exit={{ height: 0, opacity: 0 }}
                   className="overflow-hidden"
                 >
-                  <p className="max-w-4xl pb-6 leading-8 text-slate-600">{item.answer}</p>
+                  <p className="body-copy max-w-4xl pb-6">{item.answer}</p>
                 </motion.div>
               )}
             </AnimatePresence>

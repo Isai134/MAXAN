@@ -2,7 +2,7 @@ import { stripMarkdown } from '@/utils/format';
 
 export function RichText({ content }: { content: string }) {
   return (
-    <div className="space-y-5 text-base leading-8 text-slate-600 sm:text-lg">
+    <div className="space-y-5 text-base leading-8 text-secondary sm:text-lg">
       {content
         .split(/\n\s*\n/)
         .filter(Boolean)

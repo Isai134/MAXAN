@@ -50,11 +50,13 @@ export function ContactForm({ serviceRequest = false }: { serviceRequest?: boole
         </div>
         {serviceRequest && (
           <label className="sm:col-span-2">
-            <span className="mb-2 block text-sm font-semibold">Servicio de interés</span>
+            <span className="mb-2 block font-mono text-xs uppercase tracking-[0.08em] text-muted">
+              Servicio de interés
+            </span>
             <select
               name="service"
               required
-              className="min-h-12 w-full border-b border-ink/15 bg-transparent px-1 focus:border-maxan-500 focus:outline-none"
+              className="min-h-12 w-full border border-ink/25 bg-elevated px-3 focus:border-ink"
             >
               <option value="">Selecciona una opción</option>
               <option>Distintivo NMX-R-025-SCFI-2015</option>
@@ -72,24 +74,27 @@ export function ContactForm({ serviceRequest = false }: { serviceRequest?: boole
           </label>
         )}
         <label className="sm:col-span-2">
-          <span className="mb-2 block text-sm font-semibold">Mensaje</span>
+          <span className="mb-2 block font-mono text-xs uppercase tracking-[0.08em] text-muted">
+            Mensaje
+          </span>
           <textarea
             name="message"
             required
             rows={6}
             placeholder="Cuéntanos qué necesitas..."
-            className="w-full border-y border-ink/15 bg-transparent px-1 py-3 focus:border-maxan-500 focus:outline-none"
+            className="w-full border border-ink/25 bg-elevated px-3 py-3 focus:border-ink"
           />
         </label>
       </div>
       <div className="mt-6 flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
-        <p className="max-w-lg text-xs leading-5 text-slate-500">
+        <p className="max-w-lg text-xs leading-5 text-muted">
           Al enviar aceptas que MAXAN use tus datos únicamente para responder tu solicitud, conforme
           al Aviso de Privacidad.
         </p>
         <button
+          type="submit"
           disabled={status === 'sending'}
-          className="inline-flex min-h-12 items-center justify-center gap-2 rounded-full bg-ink px-7 font-semibold text-white transition hover:bg-maxan-700 disabled:opacity-60"
+          className="inline-flex min-h-12 items-center justify-center gap-2 bg-ink px-7 font-medium text-white transition hover:bg-maxan-800 disabled:opacity-60"
         >
           {status === 'sending' ? (
             <LoaderCircle className="h-4 w-4 animate-spin" />
@@ -100,7 +105,7 @@ export function ContactForm({ serviceRequest = false }: { serviceRequest?: boole
         </button>
       </div>
       <p
-        className={`mt-5 text-sm ${status === 'error' ? 'text-red-700' : 'text-maxan-700'}`}
+        className={`mt-5 text-sm ${status === 'error' ? 'text-danger' : 'text-maxan-700'}`}
         aria-live="polite"
       >
         {message}
@@ -122,13 +127,15 @@ function Field({
 }) {
   return (
     <label>
-      <span className="mb-2 block text-sm font-semibold">{label}</span>
+      <span className="mb-2 block font-mono text-xs uppercase tracking-[0.08em] text-muted">
+        {label}
+      </span>
       <input
         name={name}
         type={type}
         required
         placeholder={placeholder}
-        className="min-h-12 w-full border-b border-ink/15 bg-transparent px-1 focus:border-maxan-500 focus:outline-none"
+        className="min-h-12 w-full border border-ink/25 bg-elevated px-3 focus:border-ink"
       />
     </label>
   );

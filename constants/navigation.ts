@@ -1,7 +1,6 @@
 import type { NavigationItem } from '@/types';
 
 export const navigation: NavigationItem[] = [
-  { label: 'Inicio', href: '/' },
   { label: 'Nosotros', href: '/nosotros' },
   {
     label: 'Norma certificable',
@@ -32,6 +31,7 @@ export const navigation: NavigationItem[] = [
       { label: 'Comunicados', href: '/boletines/comunicados' },
       { label: 'Boletines bimensuales', href: '/boletines/bimensual' },
       { label: 'Preguntas frecuentes', href: '/preguntas-frecuentes' },
+      { label: 'ISO/IEC 42001 e IA', href: '/iso-42001' },
     ],
   },
   { label: 'Transparencia', href: '/transparencia' },
